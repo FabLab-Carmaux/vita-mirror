@@ -20,7 +20,7 @@ class Keyword(threading.Thread):
         """
         wait the magic word
         """
-        time.sleep(5)
+        time.sleep(2)
         #magic word is here so True
         var.keyword_ok=True
 

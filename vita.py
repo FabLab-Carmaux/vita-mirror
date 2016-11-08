@@ -5,7 +5,7 @@ VITA is my personal assistant
 """
 
 import var
-
+import plugins
 import sensor
 import command
 import sst
@@ -15,6 +15,9 @@ var.keyword_ok = False
 
 def main():
     """Main prog"""
+    
+    #load plugins
+    plugins.load()
     #init default sensors
     sens = sensor.Sensor()
     
@@ -35,20 +38,18 @@ def main():
             #so we try to recognise him/her and ask what to do
             #if recognise
             #speak to recognised people
-            command.say("hello brice")
+            #command.say("hello brice")
             #else speak to unknown
             
             wk.join()
-            wk.close()
+
             
             #after delay without more restart thread
-        else:
+        #else:
             #sleep mode ?
-            if (debug):
-                print("no one")
+            #if (debug):
+            #    print("no one")
             
-        if (debug):
-            print("loop")
 
 
     exit()

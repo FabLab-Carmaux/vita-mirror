@@ -24,3 +24,7 @@ photocells=3
 
 #global
 global keyword_ok
+
+#plugin path
+plugin_path="plugins/"
+global plugins
