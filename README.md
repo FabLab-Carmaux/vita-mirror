@@ -1,5 +1,7 @@
 # vita
 
+#gestion des evenements programmés par un cron ?
+
 
 #install dep
 apt-get update
