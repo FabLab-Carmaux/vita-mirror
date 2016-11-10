@@ -26,7 +26,7 @@ def main():
    
     done=False    
     
-    wk=stt.Keyword()
+    wk=stt.Stt("keyword")
     
     #main loop
     while not done:
