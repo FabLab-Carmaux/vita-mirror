@@ -26,8 +26,7 @@ def main():
    
     done=False    
     
-    stt.Keyword()
-
+    wk=stt.Keyword()
     
     #main loop
     while not done:
@@ -39,7 +38,7 @@ def main():
             #speak to recognised people
             command.say("hello you")
             #else speak to unknown
-            
+            wk.stop()
             
             
 
