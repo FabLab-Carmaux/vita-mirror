@@ -32,14 +32,16 @@ def main():
     
     #main loop
     while not done:
-        #waiting someone in front or IR sensor
+        #waiting someone in front or IR sensor or someone saying magical word
         if (sens.is_someone==True or var.keyword_ok==True):
             #someone is here
-            #so we try to recognise him/her and ask what to do
+            #so we try to recognise him/her with camera and ask what to do
             #if recognise
             #speak to recognised people
-            #command.say("hello brice")
+            #command.say("hello you")
             #else speak to unknown
+            
+            
             
             wk.join()
 

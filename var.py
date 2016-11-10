@@ -7,7 +7,7 @@ sst_engine="bing"
 sst_api_key=""
 
 #sst lang
-ssl_lang="fr"
+sst_lang="fr-FR"
 
 #sst keyword
 sst_keyword="vita"
