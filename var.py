@@ -1,22 +1,22 @@
 #debug ?
 debug=True
 
-#sst engine
+#stt engine
 sst_engine="bing"
-#sst api key
-sst_api_key=""
+#stt api key
+stt_api_key=""
 
-#sst lang
-sst_lang="fr-FR"
+#stt lang
+stt_lang="fr-FR"
 
-#sst keyword
-sst_keyword="vita"
+#stt keyword
+stt_keyword="vita"
 
 #tts lang
 
 #event detection
 
-#temp unit °c or °f
+#temp unit c or f
 temp_unit="c"
 
 #number of photocell

@@ -8,7 +8,7 @@ import var
 import plugins
 import sensor
 import command
-import sst
+import stt
 
 
 var.keyword_ok = False
@@ -26,8 +26,7 @@ def main():
    
     done=False    
     
-    wk = sst.Keyword()
-    wk.start()
+    stt.Keyword()
 
     
     #main loop
@@ -38,12 +37,11 @@ def main():
             #so we try to recognise him/her with camera and ask what to do
             #if recognise
             #speak to recognised people
-            #command.say("hello you")
+            command.say("hello you")
             #else speak to unknown
             
             
             
-            wk.join()
 
             
             #after delay without more restart thread
