@@ -4,7 +4,7 @@ debug=True
 #stt engine
 sst_engine="bing"
 #stt api key
-stt_api_key=""
+stt_api_key="b89f70acaa7f4336aed6d5e69be19c59"
 
 #stt lang
 stt_lang="fr-FR"
