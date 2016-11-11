@@ -1,6 +1,6 @@
 """
 command :
-type display, light, external command, say ...
+type display, light, external command, ...
 """
 
 import var
@@ -8,13 +8,6 @@ import var
 debug=var.debug
 
 
-def say(text):
-    """
-    use pico tts to speak
-    """
-    if (debug):
-        print("say "+text)
-    
 def external_url(url):
     """
     call external url

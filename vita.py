@@ -9,6 +9,7 @@ import plugins
 import sensor
 import command
 import stt
+import tts
 
 
 var.keyword_ok = False
@@ -27,19 +28,23 @@ def main():
     done=False    
     
     wk=stt.Stt("keyword")
+    voice=tts.Tts()
     
     #main loop
     while not done:
         #waiting someone in front or IR sensor or someone saying magical word
         if (sens.is_someone==True or var.keyword_ok==True):
+            var.keyword_ok = False
+            wk.stop()
             #someone is here
             #so we try to recognise him/her with camera and ask what to do
             #if recognise
             #speak to recognised people
-            command.say("hello you")
+            voice.say("bonjour brice")
+            wk=stt.Stt("keyword")
             #else speak to unknown
-            wk.stop()
             
+            wk.stop()
             
 
             

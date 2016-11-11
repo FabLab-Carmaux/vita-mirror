@@ -13,6 +13,7 @@ stt_lang="fr-FR"
 stt_keyword="vita"
 
 #tts lang
+tts_lang='fr-FR'
 
 #event detection
 
