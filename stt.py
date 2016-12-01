@@ -12,7 +12,7 @@ class Stt():
     def __init__(self, type):
         r = sr.Recognizer()
         #TODO webcam hack pc
-        m = sr.Microphone(2)
+        m = sr.Microphone(sample_rate = 44100, chunk_size = 512)
         with m as source:
             r.adjust_for_ambient_noise(source) # we only need to calibrate once, before we start listening
         if (type=="keyword"):

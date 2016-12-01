@@ -10,7 +10,7 @@ stt_api_key="b89f70acaa7f4336aed6d5e69be19c59"
 stt_lang="fr-FR"
 
 #stt keyword
-stt_keyword="vita"
+stt_keyword="lana"
 
 #tts lang
 tts_lang='fr-FR'
