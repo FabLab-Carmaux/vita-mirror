@@ -10,9 +10,8 @@ apt-get upgrade -y
 #to allow vita to speak
 sudo apt-get install libttspico-utils
 
-#speech recognition library (>3.4.6 github version for now)
-git clone https://github.com/Uberi/speech_recognition.git
-python setup.py install
+#speech recognition library (>=3.5
+pip install SpeechRecognition
 
 #to use microphone
 apt-get install python-all-dev
