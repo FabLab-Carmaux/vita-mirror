@@ -14,6 +14,8 @@
 # 2) 
 
 import logging
+import time
+import sys
 import plugins
 import pygame
 import ConfigParser
