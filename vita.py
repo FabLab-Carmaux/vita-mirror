@@ -1,23 +1,68 @@
-"""
+#!/usr/bin/env python
+# title           : VITA
+# description     : personal assistant for smart and connected mirror
+# author          : CB2 Ltd.
+# date            : 2016
+# version         : 0.1.1
+# notes           : www.vita.com
+# license         : vita open source license
+# python_version  : 2
+#==============================================================================
 
-VITA is my personal assistant 
+# TODO LIST
+# 1) 
+# 2) 
 
-"""
+import logging
+import plugins
+import pygame
+import ConfigParser
 
 import var
-import plugins
 import sensor
 import command
 import stt
 import tts
 
-import pygame
 
 var.keyword_ok = False
 
 def main():
-    """Main prog"""
-    
+
+    ## Configuration file parsing
+
+    configParser = ConfigParser.RawConfigParser()
+    configParser.read('vita.conf')
+
+    coreName = configParser.get('Identification', 'CORE_NAME')
+    coreVersion = configParser.get('Identification', 'CORE_VERSION')
+
+    logFileName = configParser.get('Logger', 'LOG_FILENAME')
+    logFormat = configParser.get('Logger', 'LOG_FORMAT')
+    logDateFormat = configParser.get('Logger', 'LOG_DATE_FORMAT')
+    logPropagate = configParser.get('Logger', 'LOG_PROPAGATE').lower() in ("yes", "true")
+
+    logLevelDict = {'debug': logging.DEBUG, 'info': logging.INFO, 'warning': logging.WARNING, 'error': logging.ERROR, 'critical': logging.CRITICAL}
+    logLevel = logLevelDict[configParser.get('Logger', 'LOG_LEVEL').lower()]
+
+    ## logger initialization
+
+    logFileName = 'log/' + time.strftime('%Y-%m-%d_%H-%M-%S',time.localtime()) + '_' + logFileName
+
+    logging.basicConfig(filename=logFileName, format=logFormat, datefmt=logDateFormat, level=logLevel)
+    logging.propagate = logPropagate
+
+    logging.info('****************************************************************************************')
+    logging.info('START CORE ' + coreName + ' v' + coreVersion)
+
+    logging.debug('sys.maxint = ' + str(sys.maxint))
+    logging.debug('sys.argv = ' + str(sys.argv))
+    logging.debug('sys.path = ' + str(sys.path))
+    logging.debug('sys.platform = ' + str(sys.platform))
+    logging.debug('sys.version = ' + str(sys.version))
+    logging.debug('sys.api_version = ' + str(sys.api_version))
+    logging.debug('sys.version_info = ' + str(sys.version_info))
+
     #load plugins
     plugins.load()
     #init default sensors
@@ -74,6 +119,9 @@ def main():
         screen.blit(text,((pygame.display.Info().current_w/2)-(text.get_width()/2),(pygame.display.Info().current_h/2)-(text.get_height()/2)))
         pygame.display.flip()
 
+        logging.info('STOP ' + coreName + ' v' + coreVersion)
+
     exit()
 if __name__ == '__main__':
     main()
+
