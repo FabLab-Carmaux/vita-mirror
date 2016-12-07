@@ -10,6 +10,7 @@
 #==============================================================================
 
 import var
+import logging
 
 class Sensor():
     """This class is to get default sensors events (IR proximity, temp/humidity, luminosity/gesture)"""

@@ -11,6 +11,7 @@
 
 #pico for now
 import var
+import logging
 import subprocess
 import os
 import sys

@@ -9,8 +9,6 @@
 # python_version  : 2
 #==============================================================================
 
-#debug ?
-debug=True
 
 #stt engine
 sst_engine="bing"
@@ -34,11 +32,3 @@ temp_unit="c"
 #number of photocell
 photocells=3
 
-#global
-global keyword_ok
-
-#vita path
-vita_path="/home/pi/vita"
-#plugin path
-plugin_path=vita_path+"/plugins/"
-global plugins

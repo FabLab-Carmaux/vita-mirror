@@ -15,9 +15,7 @@ type display, light, external command, ...
 """
 
 import var
-
-debug=var.debug
-
+import logging
 
 def external_url(url):
     """

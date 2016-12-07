@@ -11,9 +11,11 @@
 
 #bing speech api for now
 import var
+import logging
 import speech_recognition as sr
 
-    
+global keyword_ok
+
 class Stt():
 
 
@@ -39,8 +41,9 @@ class Stt():
         # received audio data, now we'll recognize it using Google Speech Recognition
         try:
             text = recognizer.recognize_bing(audio, var.stt_api_key,var.stt_lang)
-            if (var.debug==True):
-                print("BING Speech Recognition thinks you said " + text)
+
+            logging.debug('BING Speech Recognition thinks you said ' + text)
+
             if (text == var.stt_keyword):
                 var.keyword_ok=True
             else:
@@ -58,9 +61,8 @@ class Stt():
         # received audio data, now we'll recognize it using Google Speech Recognition
         try:
             var.sentence = recognizer.recognize_bing(audio, var.stt_api_key,var.stt_lang)
-            if (var.debug==True):
-                print("BING Speech Recognition thinks you said " + var.sentence)
-           
+            logging.debug('BING Speech Recognition thinks you said ' + var.sentence)
+
         except sr.UnknownValueError:
             #TODO prevoir logs
             print("BING Speech Recognition could not understand audio")

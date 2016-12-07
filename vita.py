@@ -36,9 +36,6 @@ def main():
     configParser = ConfigParser.RawConfigParser()
     configParser.read('vita.conf')
 
-    coreName = configParser.get('Identification', 'CORE_NAME')
-    coreVersion = configParser.get('Identification', 'CORE_VERSION')
-
     logFileName = configParser.get('Logger', 'LOG_FILENAME')
     logFormat = configParser.get('Logger', 'LOG_FORMAT')
     logDateFormat = configParser.get('Logger', 'LOG_DATE_FORMAT')
@@ -46,6 +43,11 @@ def main():
 
     logLevelDict = {'debug': logging.DEBUG, 'info': logging.INFO, 'warning': logging.WARNING, 'error': logging.ERROR, 'critical': logging.CRITICAL}
     logLevel = logLevelDict[configParser.get('Logger', 'LOG_LEVEL').lower()]
+
+    coreName = configParser.get('General', 'CORE_NAME')
+    coreVersion = configParser.get('General', 'CORE_VERSION')
+    corePath = configParser.get('General', 'CORE_PATH')
+    pluginPath = configParser.get('General', 'PLUGIN_PATH')
 
     ## logger initialization
 
@@ -66,12 +68,10 @@ def main():
     logging.debug('sys.version_info = ' + str(sys.version_info))
 
     #load plugins
-    plugins.load()
+    plugins.load(pluginPath)
     #init default sensors
     sens = sensor.Sensor()
-    
-    debug=var.debug
-   
+
     done=False    
     
     wk=stt.Stt("keyword")
